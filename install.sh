@@ -51,9 +51,7 @@ sleep 5s
 	systemctl start php-fpm
 	systemctl enable php-fpm
 	systemctl enable httpd
-	
-	
-sleep 10s
+
 clear 
 
 echo "##########################################################"
