@@ -9,14 +9,14 @@ echo "####################### Tiago Oliveira da Fonseca #####"
 echo "#### CentOS 7 #########################################"
 echo "#######################################################"
 
-sleep 10s
+sleep 5s
 
 clear 
 
 echo "#############################################"
 echo "########## Instalando Atualizacoes ##########"
 echo "#############################################"
-sleep 5s
+sleep 2s
 
 	yum update -y
 	
@@ -26,15 +26,12 @@ echo "#############################################"
 echo "########## Instalando Dependencias ##########" 
 echo "#############################################"
 
-sleep 5s 
+sleep 2s 
 	
 	yum install httpd -y
-	yum install php php-fpm php-apc php-cli php-common php-pdo -y
+	yum install php php-fpm php-cli php-common php-pdo -y
 	yum install unzip -y
-	yum install net-tools -y
 	yum install wget -y
-	yum remove vi -y
-	yum install vim -y
 
 clear
 
@@ -42,7 +39,7 @@ echo "##################################################"
 echo "########## Configurando as Dependencias ##########"
 echo "##################################################"
 
-sleep 5s
+sleep 2s
 
 	firewall-cmd --permanent --zone=public --add-port=80/tcp
 	firewall-cmd --permanent --zone=public --add-port=8080/tcp
@@ -58,7 +55,7 @@ echo "##########################################################"
 echo "########## Baixando e Instalando Servidor Ookla ##########"
 echo "##########################################################"
 
-sleep 5s
+sleep 2s
 	
 	cd /
 	mkdir ookla
@@ -77,12 +74,11 @@ echo "#####################################################"
 echo "########## Instalando HTTP Legacy Fallback ##########"
 echo "#####################################################"
 
-sleep 5s 
+sleep 2s 
 
 
 	cd /var/www/html
-	wget https://support.ookla.com/hc/en-us/article_attachments/216755848/crossdomain.xml
-	wget http://cdn.speedtest.speedtest.net/http_legacy_fallback.zip
+	wget http://install.speedtest.net/httplegacy/http_legacy_fallback.zip
 	unzip http_legacy_fallback.zip
 	rm http_legacy_fallback.zip
 	cd speedtest/
@@ -105,6 +101,6 @@ echo ""
 echo ""
 echo "Aguarde..."
 
-sleep 10s
+sleep 5s
 
 reboot 
